@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/_5_252076_background_image_for_weather_app">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_edittext"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_search_bar"
+        android:layout_margin="@dimen/margin_search_bar"
+        android:hint="@string/enter_city_name"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toStartOf="@+id/search_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/search_icon"
+        android:layout_width="@dimen/search_icon_dimen"
+        android:layout_height="@dimen/search_icon_dimen"
+        android:layout_margin="@dimen/margin_search_bar"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/loaction_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_search_bar"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_edittext"
+        tools:text="@string/state_name_tv" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/weather_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loaction_textview"
+        tools:text="@string/weather_name_tv" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/temp_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weather_textview"
+        tools:text="@string/temp_textView" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/todays_name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_weather_fragment"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temp_textview"
+        tools:text="Thursday" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/today_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_weather_fragment"
+        android:text="TODAY"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/todays_name_textview"
+        app:layout_constraintStart_toEndOf="@+id/todays_name_textview" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/current_weather_low_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_right_weather_fragment"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temp_textview"
+        tools:text="12" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/current_weather_high_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_right_weather_fragment"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/current_weather_low_tv"
+        app:layout_constraintTop_toBottomOf="@id/temp_textview"
+        tools:text="23" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hourly_weather_recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/today_textview"
+        tools:listitem="@layout/hourly_weather_item"
+        tools:itemCount="10"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/daily_weather_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hourly_weather_recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/daily_weather_item"
+        tools:itemCount="6"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_search_bar">30dp</dimen>
+    <dimen name="height_search_bar">60dp</dimen>
+    <dimen name="search_icon_dimen">60dp</dimen>
+    <dimen name="margin_left_weather_fragment">20dp</dimen>
+    <dimen name="margin_right_weather_fragment">20dp</dimen>
+    <dimen name="hourly_margin">10dp</dimen>
+    <dimen name="padding_daily">10dp</dimen>
+    <dimen name="icon_weather_size">30dp</dimen>
+    <dimen name="margin_daily_item">10dp</dimen>
+    <dimen name="icon_daily_margin_right">80dp</dimen>
+</resources>

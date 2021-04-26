@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CoroutinesWeatherApp</string>
+    <string name="enter_city_name">Enter City Name. . .</string>
+    <string name="state_name_tv">New York</string>
+    <string name="weather_name_tv">Sunny</string>
+    <string name="temp_textView">50</string>
+    <string name="now">Now</string>
+
+</resources>
